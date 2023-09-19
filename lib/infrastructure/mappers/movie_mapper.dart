@@ -16,8 +16,8 @@ class MovieMapper {
         popularity: moviedb.popularity,
         posterPath: (moviedb.posterPath != '')
             ? 'https://image.tmdb.org/t/p/w500${moviedb.posterPath}'
-            : 'no-post',
-        releaseDate: moviedb.releaseDate,
+            : 'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg',
+        releaseDate: moviedb.releaseDate ?? DateTime.now(),
         title: moviedb.title,
         video: moviedb.video,
         voteAverage: moviedb.voteAverage,
@@ -29,7 +29,7 @@ class MovieMapper {
         backdropPath: (moviedb.backdropPath != '')
             ? 'https://image.tmdb.org/t/p/w500${moviedb.backdropPath}'
             : 'https://negocios-inteligentes.mx/wp-content/uploads/2022/09/error-404.jpeg',
-        genreIds: moviedb.genres.map((e) => e.name ).toList(),
+        genreIds: moviedb.genres.map((e) => e.name).toList(),
         id: moviedb.id,
         originalLanguage: moviedb.originalLanguage,
         originalTitle: moviedb.originalTitle,
